@@ -4,6 +4,8 @@
 #include "../../conversion/conversion.hpp"
 #include "../../jni/local_object.hpp"
 
+#include <mbgl/util/string.hpp>
+
 namespace mbgl {
 namespace android {
 namespace conversion {

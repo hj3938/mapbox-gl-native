@@ -882,6 +882,13 @@ jobs:
       - *restore-mason_packages-cache
       - *restore-ccache
       - *reset-ccache-stats
+      - run:
+          name: Reset simulators to work around CircleCI bug
+          command: |
+              # https://discuss.circleci.com/t/xcode-10-beta-vm/23238/7
+              export LC_ALL=en_US.UTF-8
+              export LANG=en_US.UTF-8
+              fastlane snapshot reset_simulators --force
       - *build-ios-test
       - *build-ios-integration-test
       - *check-public-symbols
